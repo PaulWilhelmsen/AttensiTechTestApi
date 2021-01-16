@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AttensiTechTestApi.Services.Abstract;
+using Common.Dto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Persistence.Model;
 
 namespace AttensiTechTestApi.Controllers
 {
@@ -11,27 +14,23 @@ namespace AttensiTechTestApi.Controllers
     [ApiController]
     public class PlayerController : ControllerBase
     {
-        // GET: api/Player
+        private readonly IPlayerService _playerService;
+        public PlayerController(IPlayerService playerService)
+        {
+            _playerService = playerService;
+        }
+
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<PlayerDto> Test()
         {
-            return new string[] { "value1", "value2" };
+            return await _playerService.GetPlayerById(16);
         }
-
-        // GET: api/Player/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            //get player
-            throw new NotImplementedException();
-        }
-
         // POST: api/Player
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<PlayerDto> Post(CreatePlayerDto playerModel)
         {
-            //post new player
-            throw new NotImplementedException();
+            var newPlayer = await _playerService.CreatePlayer(playerModel);
+            return newPlayer;
         }
     }
 }

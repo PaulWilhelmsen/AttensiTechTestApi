@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttensiTechTestApi", "AttensiTechTestApi\AttensiTechTestApi.csproj", "{214B8314-806C-4165-B0DE-75A53939E2E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AttensiTechTestApi", "AttensiTechTestApi\AttensiTechTestApi.csproj", "{214B8314-806C-4165-B0DE-75A53939E2E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{40F647A2-4C5B-4426-A990-4F3799AEB020}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{40F647A2-4C5B-4426-A990-4F3799AEB020}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{4E49525F-A3DF-4EA3-978B-75B470BB95CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,26 @@ Global
 		{40F647A2-4C5B-4426-A990-4F3799AEB020}.Release|x64.Build.0 = Release|Any CPU
 		{40F647A2-4C5B-4426-A990-4F3799AEB020}.Release|x86.ActiveCfg = Release|Any CPU
 		{40F647A2-4C5B-4426-A990-4F3799AEB020}.Release|x86.Build.0 = Release|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Debug|ARM.Build.0 = Debug|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Debug|x64.Build.0 = Debug|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Debug|x86.Build.0 = Debug|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Release|ARM.ActiveCfg = Release|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Release|ARM.Build.0 = Release|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Release|ARM64.Build.0 = Release|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Release|x64.ActiveCfg = Release|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Release|x64.Build.0 = Release|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Release|x86.ActiveCfg = Release|Any CPU
+		{4E49525F-A3DF-4EA3-978B-75B470BB95CD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
