@@ -9,7 +9,9 @@ namespace AttensiTechTestApi.Profile
         public PlayerProfile()
         {
             CreateMap<CreatePlayerDto, PlayerModel>();
+            
             CreateMap<PlayerDto, PlayerModel>();
+            CreateMap<PlayerModel, PlayerDto>();
         }
     }
 }

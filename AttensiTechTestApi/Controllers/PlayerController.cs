@@ -23,7 +23,8 @@ namespace AttensiTechTestApi.Controllers
         [HttpGet]
         public async Task<PlayerDto> Test()
         {
-            return await _playerService.GetPlayerById(16);
+            var x = await _playerService.GetPlayerById(16);
+            return x;
         }
         // POST: api/Player
         [HttpPost]
