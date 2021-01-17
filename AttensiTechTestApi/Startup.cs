@@ -39,9 +39,11 @@ namespace AttensiTechTestApi
             services.AddControllers();
             services.AddTransient<IPlayerRepository, PlayerRepository>();
             services.AddTransient<IPlayerService, PlayerService>();
+            services.AddTransient<IRecordsRepository, RecordsRepository>();
+            services.AddTransient<IRecordsService, RecordsService>();
             services.AddTransient<IEnvironmentHelper, EnvironmentHelper>();
             services.AddTransient<IDbConnection, DbConnection>();
-            //services.AddTransient<>
+            
 
             services.AddAutoMapper(typeof(Startup));
         }
