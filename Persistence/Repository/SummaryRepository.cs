@@ -40,6 +40,15 @@ namespace Persistence.Repository
 
         //public async Task<IEnumerable<ImpactReportModel>>
 
+        //Not working sql
+        //SELECT player.name, MAX(score) AS MaxScore,
+        //(SELECT score FROM
+        //MIN(player_records.id) as firstScore, player_records
+        //WHERE player_records.id = firstScore) as FirstTime
+        //FROM player_records
+        //INNER JOIN player ON player.id = player_id
+        //GROUP BY player.name
+
         //---------------------------
         // Create an “Impact Report”
         //o The difference between the first and highest scores for all players(show the number of playthroughs and total time played).

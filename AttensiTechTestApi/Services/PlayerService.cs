@@ -23,6 +23,9 @@ namespace AttensiTechTestApi.Services
         //Create player
         public async Task<PlayerDto> CreatePlayer(CreatePlayerDto newPlayer)
         {
+            if (newPlayer is null)
+                throw new ArgumentNullException(nameof(newPlayer));
+                        
             var id = await _playerRepository.CreateNewPlayerAsync(newPlayer);
             var newlyCreatedPlayer = await GetPlayerById(id);
 
@@ -32,6 +35,9 @@ namespace AttensiTechTestApi.Services
         //Get Player
         public async Task<PlayerDto> GetPlayerById(int id)
         {
+            if (id == 0)
+                throw new ArgumentNullException($"Id cannot be null when getting player by id | class: {nameof(PlayerService)}");
+
             var player = await _playerRepository.GetPlayerById(id);
             var mappedPlayer = _mapper.Map<PlayerModel, PlayerDto>(player);
 
