@@ -1,18 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Text;
+using Common.Dto;
+using Persistence.Model;
+using System.Threading.Tasks;
+using Persistence.Connection.Abstract;
+using Dapper;
+using Persistence.Repository.Abstract;
+using System.Linq;
 
 namespace Persistence.Repository
 {
-    class SummaryRepository
+    public class SummaryRepository : ISummaryRepository
     {
-        //  Create a “Weekly Summary” API endpoint returning stats for a given week number(weeks start
-        //on Monday):
-        //o Top 10 players by score and duration.
-        //SELECT TOP 10 playername, score, duration
-        //WHERE ()
-        //ORDER BY score, duration. Finne ut hvordan det funker i postgres
+        private readonly IDbConnection _dbConnection;
+        public SummaryRepository(IDbConnection dbConnection)
+        {
+            _dbConnection = dbConnection ?? throw new ArgumentNullException(nameof(dbConnection));
+        }
+        public async Task<List<WeeklySummaryModel>> WeeklyReportOnWeekNumberAsync(DateTime startDate, DateTime endDate)
+        {
+            var query = @"SELECT player.name, SUM(score) as TotalScore, SUM(time_spent) as TotalTimeSpent
+                          FROM public.player_records
+                          JOIN player ON player.id = player_records.player_id
+                          WHERE player_records.start_date 
+                          	BETWEEN @StartDate
+                          	AND @EndDate
+                          GROUP BY player.name
+                          ORDER BY TotalScore DESC, totalTimespent DESC
+                          LIMIT 10";
 
+            using (var conn = _dbConnection.CreateConnection())
+            {
+                var weeklySummary = await conn.QueryAsync<WeeklySummaryModel>(query, new { StartDate = startDate, EndDate = endDate });
+                return weeklySummary.ToList();
+            }
+        }
+
+        //public async Task<IEnumerable<ImpactReportModel>>
 
         //---------------------------
         // Create an “Impact Report”
